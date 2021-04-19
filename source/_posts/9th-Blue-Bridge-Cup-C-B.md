@@ -1,8 +1,15 @@
 title: 第九届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
 tags:
-  - Blue-Bridge-Cup
+  - Blue Bridge Cup
+  - bfs
+  - modulus
   - excel
+  - binary
+  - quick sort
+  - bucket sorting
+  - prefix sum
+  - greedy
 categories:
   - algorithm
 date: 2021-04-05 21:08:00
@@ -297,7 +304,7 @@ int main() {
 
 -------
 
-## <a name="乘积尾零">乘积尾零</a>
+## <a name="乘积尾零">乘积尾零 （取模）</a>
 如下的10行数据，每行有10个整数，请你求出它们的乘积的末尾有多少个零？ 
 
 ```
@@ -517,7 +524,7 @@ int main() {
 
 -------
 
-## <a name="全球变暖">全球变暖</a>  
+## <a name="全球变暖">全球变暖 （bfs）</a>  
 你有一张某海域NxN像素的照片，"."表示海洋、"#"表示陆地，如下所示：  
 ```
 .......

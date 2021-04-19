@@ -1,7 +1,10 @@
 title: 第七届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
-tags: []
-categories: []
+tags:
+  - Blue Bridge Cup
+  - enumeration
+categories:
+  - algorithm
 date: 2021-04-10 12:27:00
 ---
 ## <a name="目录">目录</a>
@@ -105,7 +108,7 @@ int main() {
 [回到顶部](#目录)
 
 ------------
-## <a name="凑算式">3.凑算式</a>
+## <a name="凑算式">3.凑算式 （全排列 枚举）</a>
 
 ![凑算式题目.jpg](https://i.loli.net/2021/04/10/3faTRYZwMnzrl1F.jpg)
 	 

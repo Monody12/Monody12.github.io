@@ -1,7 +1,9 @@
 title: 第八届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
-date: 2021-04-08 12:17:52
 tags:
+  - Blue Bridge Cup
+categories: []
+date: 2021-04-08 12:17:00
 ---
 ## <a name="目录">目录</a>
 1. [购物单](#购物单)
