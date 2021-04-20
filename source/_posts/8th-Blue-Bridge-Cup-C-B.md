@@ -2,7 +2,12 @@ title: 第八届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
 tags:
   - Blue Bridge Cup
-categories: []
+  - prime
+  - enumeration
+  - math
+  - knapsack
+categories:
+  - algorithm
 date: 2021-04-08 12:17:00
 ---
 ## <a name="目录">目录</a>

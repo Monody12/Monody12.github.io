@@ -1,7 +1,15 @@
 title: 第六届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
-date: 2021-04-13 21:20:17
 tags:
+  - Blue Bridge Cup
+  - excel
+  - enumeration
+  - dfs
+  - permutation
+  - backtracking
+categories:
+  - algorithm
+date: 2021-04-13 21:20:00
 ---
 ## <a name="目录">目录</a>
 1. [奖券数目](#奖券数目)
@@ -79,7 +87,7 @@ int main() {
 [回到顶端](#目录)
 
 -------
-## <a name="三羊献瑞">3.三羊献瑞 （枚举）</a>
+## <a name="三羊献瑞">3.三羊献瑞 （排列 枚举）</a>
 
 观察下面的加法算式：
 ```

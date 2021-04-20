@@ -1,7 +1,13 @@
 title: 第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
 author: Monody12
-date: 2021-04-14 18:12:10
 tags:
+  - Blue Bridge Cup
+  - enumeration
+  - dfs
+  - permutation
+categories:
+  - algorithm
+date: 2021-04-14 18:12:00
 ---
 <a name="目录">目录</a>
 1. [啤酒和饮料](#啤酒和饮料)
@@ -209,7 +215,7 @@ int main() {
 [回到顶部](#目录)
 
 --------------
-## <a name="六角填数">六角填数</a>
+## <a name="六角填数">六角填数 (排列 枚举)</a>
 
 如图【1.png】所示六角形中，填入1~12的数字。
 
