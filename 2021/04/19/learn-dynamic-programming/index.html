@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>动态规划专题学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="动态规划 目录 什么是动态规划 什么情况下使用动态规划 动态规划的解题步骤 一些例题   1. 什么是动态规划以下一些资料引用自百度百科动态规划（Dynamic Programming，DP）是运筹学的一个分支，是求解决策过程最优化的过程。多阶段决策问题：可将过程分成若干个互相联系的阶段，在它的每一阶段都需要作出决策，从而使整个过程达到最好的活动效果。各个阶段采取的决策，与时间有关、决策依赖于当前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划专题学习">
+<meta property="og:url" content="https://monody12.github.io/2021/04/19/learn-dynamic-programming/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="动态规划 目录 什么是动态规划 什么情况下使用动态规划 动态规划的解题步骤 一些例题   1. 什么是动态规划以下一些资料引用自百度百科动态规划（Dynamic Programming，DP）是运筹学的一个分支，是求解决策过程最优化的过程。多阶段决策问题：可将过程分成若干个互相联系的阶段，在它的每一阶段都需要作出决策，从而使整个过程达到最好的活动效果。各个阶段采取的决策，与时间有关、决策依赖于当前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/04/19/Km4nI1MJciOslEo.jpg">
+<meta property="article:published_time" content="2021-04-19T09:32:00.000Z">
+<meta property="article:modified_time" content="2021-07-21T11:34:11.429Z">
+<meta property="article:author" content="Monody12">
+<meta property="article:tag" content="dynamic programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/19/Km4nI1MJciOslEo.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Monody12.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-learn-dynamic-programming" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/19/learn-dynamic-programming/" class="article-date">
+  <time class="dt-published" datetime="2021-04-19T09:32:00.000Z" itemprop="datePublished">2021-04-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      动态规划专题学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><hr>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li>什么是动态规划</li>
+<li>什么情况下使用动态规划</li>
+<li>动态规划的解题步骤</li>
+<li>一些例题</li>
+</ol>
+<hr>
+<h2 id="1-什么是动态规划"><a href="#1-什么是动态规划" class="headerlink" title="1. 什么是动态规划"></a>1. 什么是动态规划</h2><p>以下一些资料引用自<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/529408?fr=aladdin">百度百科</a><br>动态规划（Dynamic Programming，DP）是运筹学的一个分支，是求解决策过程最优化的过程。多阶段决策问题：可将过程分成若干个<strong>互相联系</strong>的阶段，在它的<strong>每一阶段</strong>都需要作出决策，从而使整个过程达到最好的活动效果。<br>各个阶段采取的决策，与时间有关、决策依赖于当前状态，又随即<strong>引起状态的转移</strong>，一个决策序列就是在变化的状态中产生出来的，故有“动态”的含义。</p>
+<h2 id="2-什么情况下使用动态规划"><a href="#2-什么情况下使用动态规划" class="headerlink" title="2. 什么情况下使用动态规划"></a>2. 什么情况下使用动态规划</h2><p>看来以上对动态规划的定义，新接触的读者可能会一脸茫然，不过这也正常。因为教科书上的定义通常是抽象的，所以才需要加以解释才能通俗地理解。<br>为什么要用动态规划？搜索不也可以解决类似的问题吗。没错，这个问题问的好。因为搜索通常会对一些步骤反复的计算。举一个例子吧！</p>
+<p>给你一个数列（数列的项数从0开始），数列的前两项是0、1，往后的每一项都是它前两项的数值和。请编写一个求它任意项数值的程序。  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> f(n - <span class="number">1</span>) + f(n - <span class="number">2</span>);  <span class="comment">//等于它前两项的数值和</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相信读者们一眼就看出这是一个斐波那契数列的递归搜索版本。我们来看一下它的运算过程。<br><img src="https://i.loli.net/2021/04/19/Km4nI1MJciOslEo.jpg" alt="递归求斐波那契数列.jpg"></p>
+<p>天啊，这树形的计算量，时间复杂度为O(2<sup>n</sup>)。存在很多冗余的计算——重复的子问题。这也是为什么要用动态规划的原因，我们可以很快的想出和理解斐波那契数列的推导公式<code>F(n)=f(n-1)+f(n-2)</code>。在空间花费量可以接受的前提下，我们要合理地去利用空间去换时间。很容易想到：我们可以将每次计算出来的结果存入数组，以后用到它的时候就直接从数组中取出来用不就行了。</p>
+<p>这里可能有些读者会想到：这不是记忆化搜索吗？如果你继续使用递归来求解，这个方法也是可取的。下面我们来引入今天的主题：不用搜索、基于迭代循环的<strong>动态规划算法</strong>。</p>
+<h2 id="3-动态规划的解题步骤"><a href="#3-动态规划的解题步骤" class="headerlink" title="3.动态规划的解题步骤"></a>3.动态规划的解题步骤</h2><p>参考自我的动态规划老师——<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ocZwfPlCWrJtVGACqFNAag">Carl的解决方案</a>。</p>
+<h3 id="1-确定dp数组以及下标的含义"><a href="#1-确定dp数组以及下标的含义" class="headerlink" title="1. 确定dp数组以及下标的含义"></a>1. 确定dp数组以及下标的含义</h3><p>为了一眼看出这是一个动态规划做法，我们暂且使用dp来代替f作为数组的名称。<br>dp[n]表示数列的第n项的值。<br>注：当我们写动态规划题迷茫的时候就问自己，我的dp数组的含义是什么。</p>
+<h3 id="2-确定递推公式"><a href="#2-确定递推公式" class="headerlink" title="2. 确定递推公式"></a>2. 确定递推公式</h3><p>通过上面的分析，或者是熟悉斐波那契数列的你一眼就看出来了。<br>dp[n]=f[n-1]+f[n-2]</p>
+<h3 id="3-dp数组如何初始化"><a href="#3-dp数组如何初始化" class="headerlink" title="3. dp数组如何初始化"></a>3. dp数组如何初始化</h3><p>根据规定，数列的第一项和第二项分别为0和1。<br>所以<code>dp[0]=0,dp[1]=1;</code></p>
+<h3 id="4-确定遍历顺序"><a href="#4-确定遍历顺序" class="headerlink" title="4. 确定遍历顺序"></a>4. 确定遍历顺序</h3><p>因为斐波那契数列的项都是由它的前两项所得出的，所以遍历顺序为从前往后。</p>
+<h3 id="5-举例推导dp数组"><a href="#5-举例推导dp数组" class="headerlink" title="5. 举例推导dp数组"></a>5. 举例推导dp数组</h3><p>打印出dp数组在推导时的过程数组，检查其是否与自己思考的是否相符。<br>注：找bug关键的一步。</p>
+<p>至此，这一题我们就写出来了。之所以选用这么简单的例题，是为了能够让读者更专注与理解动态规划的思想和解题步骤，而不是专注于怎么求出一个很难的递推过程。<br>题外话：其实这题还有更优的解法，使用两个变量不断更新作为当前要求的数列项的前两项值。但这样做就不能很好地理解动态规划了！</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fibonacci-number/">原题链接</a></p>
+<p>参考代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> f[<span class="number">31</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            f[i] = f[i - <span class="number">1</span>] + f[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> f[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-一些例题"><a href="#4-一些例题" class="headerlink" title="4. 一些例题"></a>4. 一些例题</h2><p>暂未更新。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://monody12.github.io/2021/04/19/learn-dynamic-programming/" data-id="ckrdetm4j001bx0ulatkl7nxb" data-title="动态规划专题学习" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic programming</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/29/Web-Attack-Technology/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Web攻击技术基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Codeforces/">Codeforces</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/miniprogram/">miniprogram</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag"> dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Base-conversion/" rel="tag">Base conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-search/" rel="tag">Binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WeChat/" rel="tag">WeChat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backtracking/" rel="tag">backtracking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfs/" rel="tag">bfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary/" rel="tag">binary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bucket-sorting/" rel="tag">bucket sorting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcd/" rel="tag">gcd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greedy/" rel="tag">greedy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/" rel="tag">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interval/" rel="tag">interval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack/" rel="tag">knapsack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack-problem/" rel="tag">knapsack problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lcm/" rel="tag">lcm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miniprogram/" rel="tag">miniprogram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modulus/" rel="tag">modulus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permutation/" rel="tag">permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefix-sum/" rel="tag">prefix sum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prime/" rel="tag">prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/" rel="tag">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sequence/" rel="tag">sequence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/simulation/" rel="tag">simulation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/union-set/" rel="tag">union set</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dynamic-programming/" style="font-size: 10px;"> dynamic programming</a> <a href="/tags/Base-conversion/" style="font-size: 10px;">Base conversion</a> <a href="/tags/Binary-search/" style="font-size: 10px;">Binary search</a> <a href="/tags/Blue-Bridge-Cup/" style="font-size: 18px;">Blue Bridge Cup</a> <a href="/tags/Codeforces/" style="font-size: 12px;">Codeforces</a> <a href="/tags/WeChat/" style="font-size: 10px;">WeChat</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/backtracking/" style="font-size: 10px;">backtracking</a> <a href="/tags/bfs/" style="font-size: 12px;">bfs</a> <a href="/tags/binary/" style="font-size: 10px;">binary</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/bucket-sorting/" style="font-size: 10px;">bucket sorting</a> <a href="/tags/dfs/" style="font-size: 12px;">dfs</a> <a href="/tags/dynamic-programming/" style="font-size: 10px;">dynamic programming</a> <a href="/tags/enumeration/" style="font-size: 16px;">enumeration</a> <a href="/tags/excel/" style="font-size: 12px;">excel</a> <a href="/tags/gcd/" style="font-size: 10px;">gcd</a> <a href="/tags/greedy/" style="font-size: 20px;">greedy</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/interval/" style="font-size: 12px;">interval</a> <a href="/tags/knapsack/" style="font-size: 10px;">knapsack</a> <a href="/tags/knapsack-problem/" style="font-size: 10px;">knapsack problem</a> <a href="/tags/lcm/" style="font-size: 10px;">lcm</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/miniprogram/" style="font-size: 10px;">miniprogram</a> <a href="/tags/modulus/" style="font-size: 14px;">modulus</a> <a href="/tags/permutation/" style="font-size: 14px;">permutation</a> <a href="/tags/prefix-sum/" style="font-size: 10px;">prefix sum</a> <a href="/tags/prime/" style="font-size: 10px;">prime</a> <a href="/tags/quick-sort/" style="font-size: 12px;">quick sort</a> <a href="/tags/sequence/" style="font-size: 10px;">sequence</a> <a href="/tags/simulation/" style="font-size: 12px;">simulation</a> <a href="/tags/union-set/" style="font-size: 10px;">union set</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/04/union-set/">并查集</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/29/Web-Attack-Technology/">Web攻击技术基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/learn-dynamic-programming/">动态规划专题学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/">第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/5th-Blue-Bridge-Cup-C-B/">第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Monody12<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

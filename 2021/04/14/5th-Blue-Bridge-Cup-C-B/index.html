@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="目录  啤酒和饮料 切面条 李白打酒 史丰收速算 打印图形 奇怪的分式 六角填数 蚂蚁感冒 地宫取宝 小朋友排队  啤酒和饮料 (枚举)啤酒每罐2.3元，饮料每罐1.9元。小明买了若干啤酒和饮料，一共花了82.3元。 我们还知道他买的啤酒比饮料的数量少，请你计算他买了几罐啤酒。 分析数据范围不大: 直接枚举啤酒和饮料的数量即可 12345678910111213#include &lt;cstdi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五届蓝桥杯大赛软件类省赛 C&#x2F;C++ 大学B 组">
+<meta property="og:url" content="https://monody12.github.io/2021/04/14/5th-Blue-Bridge-Cup-C-B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目录  啤酒和饮料 切面条 李白打酒 史丰收速算 打印图形 奇怪的分式 六角填数 蚂蚁感冒 地宫取宝 小朋友排队  啤酒和饮料 (枚举)啤酒每罐2.3元，饮料每罐1.9元。小明买了若干啤酒和饮料，一共花了82.3元。 我们还知道他买的啤酒比饮料的数量少，请你计算他买了几罐啤酒。 分析数据范围不大: 直接枚举啤酒和饮料的数量即可 12345678910111213#include &lt;cstdi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/04/14/AOnPSJ9wy2ms6Mu.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/15/rHdhFzxbiCPnI3M.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/15/kKBc5sx78mYyjvw.jpg">
+<meta property="article:published_time" content="2021-04-14T10:12:00.000Z">
+<meta property="article:modified_time" content="2021-07-21T11:34:11.422Z">
+<meta property="article:author" content="Monody12">
+<meta property="article:tag" content="Blue Bridge Cup">
+<meta property="article:tag" content="enumeration">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="permutation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/14/AOnPSJ9wy2ms6Mu.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Monody12.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-5th-Blue-Bridge-Cup-C-B" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/14/5th-Blue-Bridge-Cup-C-B/" class="article-date">
+  <time class="dt-published" datetime="2021-04-14T10:12:00.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a name="目录">目录</a></p>
+<ol>
+<li><a href="#%E5%95%A4%E9%85%92%E5%92%8C%E9%A5%AE%E6%96%99">啤酒和饮料</a></li>
+<li><a href="#%E5%88%87%E9%9D%A2%E6%9D%A1">切面条</a></li>
+<li><a href="#%E6%9D%8E%E7%99%BD%E6%89%93%E9%85%92">李白打酒</a></li>
+<li><a href="#%E5%8F%B2%E4%B8%B0%E6%94%B6%E9%80%9F%E7%AE%97">史丰收速算</a></li>
+<li><a href="#%E6%89%93%E5%8D%B0%E5%9B%BE%E5%BD%A2">打印图形</a></li>
+<li><a href="#%E5%A5%87%E6%80%AA%E7%9A%84%E5%88%86%E5%BC%8F">奇怪的分式</a></li>
+<li><a href="#%E5%85%AD%E8%A7%92%E5%A1%AB%E6%95%B0">六角填数</a></li>
+<li><a href="#%E8%9A%82%E8%9A%81%E6%84%9F%E5%86%92">蚂蚁感冒</a></li>
+<li><a href="#%E5%9C%B0%E5%AE%AB%E5%8F%96%E5%AE%9D">地宫取宝</a></li>
+<li><a href="#%E5%B0%8F%E6%9C%8B%E5%8F%8B%E6%8E%92%E9%98%9F">小朋友排队</a></li>
+</ol>
+<h2 id="啤酒和饮料-枚举"><a href="#啤酒和饮料-枚举" class="headerlink" title="啤酒和饮料 (枚举)"></a><a name="啤酒和饮料">啤酒和饮料 (枚举)</a></h2><p>啤酒每罐2.3元，饮料每罐1.9元。小明买了若干啤酒和饮料，一共花了82.3元。</p>
+<p>我们还知道他买的啤酒比饮料的数量少，请你计算他买了几罐啤酒。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>数据范围不大: 直接枚举啤酒和饮料的数量即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; ++i)   <span class="comment">//枚举啤酒数量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; <span class="number">100</span>; ++j)  <span class="comment">//枚举饮料数量</span></span><br><span class="line">            <span class="keyword">if</span> (i * <span class="number">2.3</span> + j * <span class="number">1.9</span> == <span class="number">82.3</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;啤酒买了%d罐 饮料买了%d罐&quot;</span>, i, j);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：啤酒买了11罐 饮料买了30罐<br>填入答案：11</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="切面条"><a href="#切面条" class="headerlink" title="切面条"></a><a name="切面条">切面条</a></h2><p>一根高筋拉面，中间切一刀，可以得到2根面条。</p>
+<p>如果先对折1次，中间切一刀，可以得到3根面条。</p>
+<p>如果连续对折2次，中间切一刀，可以得到5根面条。</p>
+<p>那么，连续对折10次，中间切一刀，会得到多少面条呢？</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>参加一位大神的<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_37590454/article/details/83684664">解析</a><br>我认为用纸来代替面条真的是一个绝妙的操作。省去了抽象的思考。实验出对折3次后中间切一刀可以得到9根面条。<br>总结一下： </p>
+<table>
+<thead>
+<tr>
+<th align="center">对折次数 n</th>
+<th align="center">得到的面条数 f(n)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="center">2 * f(n-1) - 1</td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">int</span> f[<span class="number">11</span>] = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">4</span>; i &lt;= <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        f[i] = <span class="number">2</span> * f[i - <span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, f[<span class="number">10</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：1025</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="李白打酒-（dfs）"><a href="#李白打酒-（dfs）" class="headerlink" title="李白打酒 （dfs）"></a><a name="李白打酒">李白打酒 （dfs）</a></h2><p>话说大诗人李白，一生好饮。幸好他从不开车。</p>
+<p>一天，他提着酒壶，从家里出来，酒壶中有酒2斗。他边走边唱：</p>
+<p>无事街上走，提壶去打酒。<br>逢店加一倍，遇花喝一斗。</p>
+<p>这一路上，他一共遇到店5次，遇到花10次，已知最后一次遇到的是花，他正好把酒喝光了。 </p>
+<p>请你计算李白遇到店和花的次序，可以把遇店记为a，遇花记为b。则：babaabbabbabbbb 就是合理的次序。像这样的答案一共有多少呢？请你计算出所有可能方案的个数（包含题目给出的）。</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>递归法尝试李白每次是遇到花还是店。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 递归深搜李白喝酒的方案</span></span><br><span class="line"><span class="comment"> * @param alcohol 当前酒量</span></span><br><span class="line"><span class="comment"> * @param flower 剩余遇到的花的数量</span></span><br><span class="line"><span class="comment"> * @param shop 剩余遇到的店的数量</span></span><br><span class="line"><span class="comment"> * @param last_meet 上一次遇到的是花还是店 花是1 店是2</span></span><br><span class="line"><span class="comment"> * @param ans 当前可行的方案数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> alcohol, <span class="keyword">int</span> flower, <span class="keyword">int</span> shop, <span class="keyword">int</span> last_meet, <span class="keyword">int</span> &amp;ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (alcohol == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (flower == <span class="number">0</span> &amp;&amp; shop == <span class="number">0</span> &amp;&amp; last_meet == <span class="number">1</span>)</span><br><span class="line">            ++ans;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flower &gt; <span class="number">0</span>)</span><br><span class="line">        dfs(alcohol - <span class="number">1</span>, flower - <span class="number">1</span>, shop, <span class="number">1</span>, ans);  <span class="comment">//假设遇到花了</span></span><br><span class="line">    <span class="keyword">if</span> (shop &gt; <span class="number">0</span>)</span><br><span class="line">        dfs(alcohol * <span class="number">2</span>, flower, shop - <span class="number">1</span>, <span class="number">2</span>, ans);  <span class="comment">//假设遇到店了</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    dfs(<span class="number">2</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">0</span>, ans);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：14</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="史丰收速算"><a href="#史丰收速算" class="headerlink" title="史丰收速算"></a><a name="史丰收速算">史丰收速算</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="打印图形"><a href="#打印图形" class="headerlink" title="打印图形"></a><a name="打印图形">打印图形</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="奇怪的分式-（枚举）"><a href="#奇怪的分式-（枚举）" class="headerlink" title="奇怪的分式 （枚举）"></a><a name="奇怪的分式">奇怪的分式 （枚举）</a></h2><p>上小学的时候，小明经常自己发明新算法。一次，老师出的题目是：<br>1/4 乘以 8/5<br>小明居然把分子拼接在一起，分母拼接在一起，答案是：18/45 （参见图1.png）<br>老师刚想批评他，转念一想，这个答案凑巧也对啊，真是见鬼！<br>对于分子、分母都是 1~9 中的一位数的情况，还有哪些算式可以这样计算呢？<br>请写出所有不同算式的个数（包括题中举例的）。<br>显然，交换分子分母后，例如：4/1 乘以 5/8 是满足要求的，这算做不同的算式。<br>但对于分子分母相同的情况，2/2 乘以 3/3 这样的类型太多了，不在计数之列!  </p>
+<p><img src="https://i.loli.net/2021/04/14/AOnPSJ9wy2ms6Mu.png" alt="奇怪的分式题目.PNG"></p>
+<p>注意：答案是个整数（考虑对称性，肯定是偶数）。请通过浏览器提交。不要书写多余的内容。</p>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><p>枚举这四个数再检查表达式是否成立即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">double</span> i, <span class="keyword">double</span> j, <span class="keyword">double</span> k, <span class="keyword">double</span> l)</span> </span>&#123;  <span class="comment">//检查表达式是否正确</span></span><br><span class="line">    <span class="keyword">double</span> left = i / j * k / l;</span><br><span class="line">    <span class="keyword">double</span> right = (i * <span class="number">10</span> + k) / (j * <span class="number">10</span> + l);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fabs</span>(left - right) &lt;= <span class="number">1e-5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="number">10</span>; ++j)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; <span class="number">10</span>; ++k)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt; <span class="number">10</span>; ++l) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == j &amp;&amp; k == l)  <span class="comment">//消除两对分子分母都相同的情况</span></span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span> (check(i, j, k, l))</span><br><span class="line">                        ++ans;</span><br><span class="line">                &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="六角填数-排列-枚举"><a href="#六角填数-排列-枚举" class="headerlink" title="六角填数 (排列 枚举)"></a><a name="六角填数">六角填数 (排列 枚举)</a></h2><p>如图【1.png】所示六角形中，填入1~12的数字。</p>
+<p>使得每条直线上的数字之和都相同。</p>
+<p>图中，已经替你填好了3个数字，请你计算星号位置所代表的数字是多少？</p>
+<p><img src="https://i.loli.net/2021/04/15/rHdhFzxbiCPnI3M.png" alt="六角填数题目.png"></p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>全排列把剩余的孔都进行填充，寻找正确的解法。<br>实现：<br>将剩余的孔看出未知量，我是这样设未知量的。<br><img src="https://i.loli.net/2021/04/15/kKBc5sx78mYyjvw.jpg" alt="六角填数写法.jpg"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">9</span>], vis[<span class="number">13</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">()</span> </span>&#123;  <span class="comment">//检查当前分布是否满足每行之和相等</span></span><br><span class="line">    <span class="keyword">int</span> line[<span class="number">7</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    line[<span class="number">1</span>] = <span class="number">8</span> + a[<span class="number">0</span>] + a[<span class="number">1</span>] + a[<span class="number">2</span>];</span><br><span class="line">    line[<span class="number">2</span>] = <span class="number">1</span> + a[<span class="number">0</span>] + a[<span class="number">3</span>] + a[<span class="number">5</span>];</span><br><span class="line">    line[<span class="number">3</span>] = <span class="number">1</span> + a[<span class="number">1</span>] + a[<span class="number">4</span>] + a[<span class="number">8</span>];</span><br><span class="line">    line[<span class="number">4</span>] = a[<span class="number">2</span>] + a[<span class="number">4</span>] + a[<span class="number">7</span>] + <span class="number">3</span>;</span><br><span class="line">    line[<span class="number">5</span>] = <span class="number">8</span> + a[<span class="number">3</span>] + a[<span class="number">6</span>] + <span class="number">3</span>;</span><br><span class="line">    line[<span class="number">6</span>] = a[<span class="number">5</span>] + a[<span class="number">6</span>] + a[<span class="number">7</span>] + a[<span class="number">8</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; ++j)</span><br><span class="line">            <span class="keyword">if</span> (line[i] != line[j])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">8</span>; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step, <span class="keyword">int</span> n)</span> </span>&#123;  <span class="comment">//全排列枚举每个空位出现的数字</span></span><br><span class="line">    <span class="keyword">if</span> (step &gt; n) &#123;</span><br><span class="line">        check();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">12</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!vis[i]) &#123;</span><br><span class="line">            vis[i] = <span class="number">1</span>;</span><br><span class="line">            a[step] = i;</span><br><span class="line">            dfs(step + <span class="number">1</span>, n);</span><br><span class="line">            vis[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vis[<span class="number">8</span>] = vis[<span class="number">3</span>] = vis[<span class="number">1</span>] = <span class="number">1</span>;  <span class="comment">//已固定的值</span></span><br><span class="line">    dfs(<span class="number">0</span>, <span class="number">8</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：9 2 7 10 12 6 5 4 11<br>填入答案：10</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="蚂蚁感冒"><a href="#蚂蚁感冒" class="headerlink" title="蚂蚁感冒"></a><a name="蚂蚁感冒">蚂蚁感冒</a></h2><p>长100厘米的细长直杆子上有n只蚂蚁。它们的头有的朝左，有的朝右。 </p>
+<p>每只蚂蚁都只能沿着杆子向前爬，速度是1厘米/秒。</p>
+<p>当两只蚂蚁碰面时，它们会同时掉头往相反的方向爬行。</p>
+<p>这些蚂蚁中，有1只蚂蚁感冒了。并且在和其它蚂蚁碰面时，会把感冒传染给碰到的蚂蚁。</p>
+<p>请你计算，当所有蚂蚁都爬离杆子时，有多少只蚂蚁患上了感冒。</p>
+<p>【数据格式】</p>
+<p>第一行输入一个整数n (1 &lt; n &lt; 50), 表示蚂蚁的总数。</p>
+<p>接着的一行是n个用空格分开的整数 Xi (-100 &lt; Xi &lt; 100), Xi的绝对值，表示蚂蚁离开杆子左边端点的距离。正值表示头朝右，负值表示头朝左，数据中不会出现0值，也不会出现两只蚂蚁占用同一位置。其中，第一个数据代表的蚂蚁感冒了。</p>
+<p>要求输出1个整数，表示最后感冒蚂蚁的数目。</p>
+<p>例如，输入：<br>3<br>5 -2 8<br>程序应输出：<br>1</p>
+<p>再例如，输入：<br>5<br>-10 8 -20 12 25<br>程序应输出：<br>3</p>
+<p>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗  &lt; 1000ms</p>
+<h3 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h3><p>本题是一个比较简单的分类讨论题。<br>题意：给出了一些蚂蚁所在的位置坐标（数的绝对值）和它们的行动方向（数的正负性）。每个蚂蚁行动速度都是一样的，坐标是无限长的。其中一只蚂蚁感冒了，如果它与其他蚂蚁相遇，就会发生传染。被传染的蚂蚁同样可以传染其他蚂蚁。<br>注意：在本题中设定当两只蚂蚁碰面时，它们会同时掉头往相反的方向爬行。这一句话可以无视。因为如果碰面时不论是否被感染，即使它们都掉头，它们的属性（是否染病）是一致的，可以认为它们穿过去了而非掉头。  </p>
+<p>实现：具体分类讨论和实现过程见代码和注释吧，很详细。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">101</span>], <span class="built_in">map</span>[<span class="number">101</span>];  <span class="comment">//map存储当前位置的蚂蚁信息，0为无蚂蚁，1为有向右爬的蚂蚁，-1为有向左爬的蚂蚁</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// input;</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, a + i);</span><br><span class="line">        <span class="built_in">map</span>[<span class="built_in">abs</span>(a[i])] = a[i] &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>] &gt; <span class="number">0</span>) &#123;  <span class="comment">//感冒的蚂蚁在向右爬</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = a[<span class="number">0</span>] + <span class="number">1</span>; i &lt;= <span class="number">100</span>; ++i)   <span class="comment">//寻找感冒蚂蚁右侧向左爬的蚂蚁</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">map</span>[i] == <span class="number">-1</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">        <span class="keyword">if</span> (ans == <span class="number">1</span>) &#123;  <span class="comment">//右侧没有向左爬的蚂蚁，那么它左侧向右爬的就不会被传染</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = a[<span class="number">0</span>] - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">map</span>[i] == <span class="number">1</span>)</span><br><span class="line">                    ++ans;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;  <span class="comment">//感冒的蚂蚁向左爬</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = -a[<span class="number">0</span>] - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)   <span class="comment">//寻找感冒蚂蚁左侧向右爬的蚂蚁</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">map</span>[i] == <span class="number">1</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">        <span class="keyword">if</span> (ans == <span class="number">1</span>) &#123;  <span class="comment">//左侧没有向右爬的蚂蚁，那么它右侧向左爬的就不会被传染</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = -a[<span class="number">0</span>] + <span class="number">1</span>; i &lt;= <span class="number">100</span>; ++i)</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">map</span>[i] == <span class="number">-1</span>)</span><br><span class="line">                    ++ans;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="地宫取宝"><a href="#地宫取宝" class="headerlink" title="地宫取宝"></a><a name="地宫取宝">地宫取宝</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="小朋友排队"><a href="#小朋友排队" class="headerlink" title="小朋友排队"></a><a name="小朋友排队">小朋友排队</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://monody12.github.io/2021/04/14/5th-Blue-Bridge-Cup-C-B/" data-id="ckrdetm3v0007x0ule2of6478" data-title="第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/permutation/" rel="tag">permutation</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/13/6th-Blue-Bridge-Cup-C-B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">第六届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Codeforces/">Codeforces</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/miniprogram/">miniprogram</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag"> dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Base-conversion/" rel="tag">Base conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-search/" rel="tag">Binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WeChat/" rel="tag">WeChat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backtracking/" rel="tag">backtracking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfs/" rel="tag">bfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary/" rel="tag">binary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bucket-sorting/" rel="tag">bucket sorting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcd/" rel="tag">gcd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greedy/" rel="tag">greedy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/" rel="tag">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interval/" rel="tag">interval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack/" rel="tag">knapsack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack-problem/" rel="tag">knapsack problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lcm/" rel="tag">lcm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miniprogram/" rel="tag">miniprogram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modulus/" rel="tag">modulus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permutation/" rel="tag">permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefix-sum/" rel="tag">prefix sum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prime/" rel="tag">prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/" rel="tag">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sequence/" rel="tag">sequence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/simulation/" rel="tag">simulation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/union-set/" rel="tag">union set</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dynamic-programming/" style="font-size: 10px;"> dynamic programming</a> <a href="/tags/Base-conversion/" style="font-size: 10px;">Base conversion</a> <a href="/tags/Binary-search/" style="font-size: 10px;">Binary search</a> <a href="/tags/Blue-Bridge-Cup/" style="font-size: 18px;">Blue Bridge Cup</a> <a href="/tags/Codeforces/" style="font-size: 12px;">Codeforces</a> <a href="/tags/WeChat/" style="font-size: 10px;">WeChat</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/backtracking/" style="font-size: 10px;">backtracking</a> <a href="/tags/bfs/" style="font-size: 12px;">bfs</a> <a href="/tags/binary/" style="font-size: 10px;">binary</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/bucket-sorting/" style="font-size: 10px;">bucket sorting</a> <a href="/tags/dfs/" style="font-size: 12px;">dfs</a> <a href="/tags/dynamic-programming/" style="font-size: 10px;">dynamic programming</a> <a href="/tags/enumeration/" style="font-size: 16px;">enumeration</a> <a href="/tags/excel/" style="font-size: 12px;">excel</a> <a href="/tags/gcd/" style="font-size: 10px;">gcd</a> <a href="/tags/greedy/" style="font-size: 20px;">greedy</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/interval/" style="font-size: 12px;">interval</a> <a href="/tags/knapsack/" style="font-size: 10px;">knapsack</a> <a href="/tags/knapsack-problem/" style="font-size: 10px;">knapsack problem</a> <a href="/tags/lcm/" style="font-size: 10px;">lcm</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/miniprogram/" style="font-size: 10px;">miniprogram</a> <a href="/tags/modulus/" style="font-size: 14px;">modulus</a> <a href="/tags/permutation/" style="font-size: 14px;">permutation</a> <a href="/tags/prefix-sum/" style="font-size: 10px;">prefix sum</a> <a href="/tags/prime/" style="font-size: 10px;">prime</a> <a href="/tags/quick-sort/" style="font-size: 12px;">quick sort</a> <a href="/tags/sequence/" style="font-size: 10px;">sequence</a> <a href="/tags/simulation/" style="font-size: 12px;">simulation</a> <a href="/tags/union-set/" style="font-size: 10px;">union set</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/04/union-set/">并查集</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/29/Web-Attack-Technology/">Web攻击技术基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/learn-dynamic-programming/">动态规划专题学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/">第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/5th-Blue-Bridge-Cup-C-B/">第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Monody12<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

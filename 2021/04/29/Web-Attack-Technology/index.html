@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Web攻击技术基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="目录    web攻击 web攻击模式 web攻击方式  web攻击随着当今世界网络进步的发展，我们的生活越来越离不开网络，基于http协议的Web网页是当下最受欢迎的网络协议技术之一。这虽然是一项成熟的技术，但它的安全缺陷也不可忽视。   设计http最初的目的是为了提供一种发布和接收HTML页面的方法，它本身不具备安全特性。虽然现在已经有很多手段能够提升http通信的安全性，例如https的s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web攻击技术基础">
+<meta property="og:url" content="https://monody12.github.io/2021/04/29/Web-Attack-Technology/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目录    web攻击 web攻击模式 web攻击方式  web攻击随着当今世界网络进步的发展，我们的生活越来越离不开网络，基于http协议的Web网页是当下最受欢迎的网络协议技术之一。这虽然是一项成熟的技术，但它的安全缺陷也不可忽视。   设计http最初的目的是为了提供一种发布和接收HTML页面的方法，它本身不具备安全特性。虽然现在已经有很多手段能够提升http通信的安全性，例如https的s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-29T07:34:14.000Z">
+<meta property="article:modified_time" content="2021-07-21T11:34:11.427Z">
+<meta property="article:author" content="Monody12">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Monody12.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Web-Attack-Technology" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/29/Web-Attack-Technology/" class="article-date">
+  <time class="dt-published" datetime="2021-04-29T07:34:14.000Z" itemprop="datePublished">2021-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Web攻击技术基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>目录  </p>
+<ol>
+<li>web攻击</li>
+<li>web攻击模式</li>
+<li>web攻击方式</li>
+</ol>
+<h2 id="web攻击"><a href="#web攻击" class="headerlink" title="web攻击"></a>web攻击</h2><p>随着当今世界网络进步的发展，我们的生活越来越离不开网络，基于http协议的Web网页是当下最受欢迎的网络协议技术之一。这虽然是一项成熟的技术，但它的安全缺陷也不可忽视。  </p>
+<p>设计http最初的目的是为了提供一种发布和接收HTML页面的方法，它本身不具备安全特性。虽然现在已经有很多手段能够提升http通信的安全性，例如https的ssl证书加密验证，以及cookie和session的用户身份验证等技术。它们能在网络被监听的时候对客户端与服务器间建立的通信起到加密保护和身份校验的作用。但是我们的Web服务器中可能出现一些安全漏洞可能会被攻击者利用。</p>
+<p>我们的Web服务器和数据库或者是客户端将可能成为攻击对象。</p>
+<h2 id="web攻击模式"><a href="#web攻击模式" class="headerlink" title="web攻击模式"></a>web攻击模式</h2><h3 id="主动攻击"><a href="#主动攻击" class="headerlink" title="主动攻击"></a>主动攻击</h3><h4 id="以服务器为目标的主动攻击"><a href="#以服务器为目标的主动攻击" class="headerlink" title="以服务器为目标的主动攻击"></a>以服务器为目标的主动攻击</h4><p>例如通过一些漏洞绕过服务器的验证，获取服务器上的资源。比如非法url访问，sql、os命令注入攻击。</p>
+<h3 id="被动攻击"><a href="#被动攻击" class="headerlink" title="被动攻击"></a>被动攻击</h3><h4 id="被动攻击（passive-attack）是指利用圈套策略执行攻击代码的攻击模式。在被动攻击过程中，攻击者不直接对目标-Web-应用访问发起攻击。"><a href="#被动攻击（passive-attack）是指利用圈套策略执行攻击代码的攻击模式。在被动攻击过程中，攻击者不直接对目标-Web-应用访问发起攻击。" class="headerlink" title="被动攻击（passive attack）是指利用圈套策略执行攻击代码的攻击模式。在被动攻击过程中，攻击者不直接对目标 Web 应用访问发起攻击。"></a>被动攻击（passive attack）是指利用圈套策略执行攻击代码的攻击模式。在被动攻击过程中，攻击者不直接对目标 Web 应用访问发起攻击。</h4><p>例如钓鱼的url链接，网页中被植入了攻击代码，使用户的账号密码或者是登录状态信息（cookies和会话id）泄露。被动攻击模式中具有代表性的攻击是跨站脚本攻击和跨站点请求<br>伪造。</p>
+<h2 id="web攻击方式"><a href="#web攻击方式" class="headerlink" title="web攻击方式"></a>web攻击方式</h2><h3 id="利用输入验证漏洞"><a href="#利用输入验证漏洞" class="headerlink" title="利用输入验证漏洞"></a>利用输入验证漏洞</h3><p>在web应用需要收集应用信息的时候通常会让用户输入一些信息，经过校验后提交至服务器，最终对数据库进行操作。</p>
+<p>而在校验过程中就有可能存在漏洞。校验通常分为两种。一种是<strong>客户端验证</strong>（JavaScript脚本），另一种是在<strong>服务器端验证</strong>（jsp，php等页面支持的语言）。</p>
+<p>在客户端进行JavaScript验证只能作为提高与用户的交互性和减轻服务器压力的一种解决方案，非常不安全。攻击者可以通过<strong>禁用</strong>或是<strong>篡改</strong>JavaScript验证脚本或者是<strong>修改提交内容</strong>就可以轻易绕过检测，向服务器提交一些错误或有攻击性的数据。</p>
+<p>而在服务器端为了防止攻击者提交恶意代码被执行，就必须做好输入语句的转义，防止恶意代码被执行。</p>
+<h3 id="跨站脚本攻击"><a href="#跨站脚本攻击" class="headerlink" title="跨站脚本攻击"></a>跨站脚本攻击</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://monody12.github.io/2021/04/29/Web-Attack-Technology/" data-id="ckrdetm4d000vx0uler2ienfz" data-title="Web攻击技术基础" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/05/04/union-set/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          并查集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/19/learn-dynamic-programming/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">动态规划专题学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Codeforces/">Codeforces</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/miniprogram/">miniprogram</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag"> dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Base-conversion/" rel="tag">Base conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-search/" rel="tag">Binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WeChat/" rel="tag">WeChat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backtracking/" rel="tag">backtracking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfs/" rel="tag">bfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary/" rel="tag">binary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bucket-sorting/" rel="tag">bucket sorting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcd/" rel="tag">gcd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greedy/" rel="tag">greedy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/" rel="tag">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interval/" rel="tag">interval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack/" rel="tag">knapsack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack-problem/" rel="tag">knapsack problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lcm/" rel="tag">lcm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miniprogram/" rel="tag">miniprogram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modulus/" rel="tag">modulus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permutation/" rel="tag">permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefix-sum/" rel="tag">prefix sum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prime/" rel="tag">prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/" rel="tag">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sequence/" rel="tag">sequence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/simulation/" rel="tag">simulation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/union-set/" rel="tag">union set</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dynamic-programming/" style="font-size: 10px;"> dynamic programming</a> <a href="/tags/Base-conversion/" style="font-size: 10px;">Base conversion</a> <a href="/tags/Binary-search/" style="font-size: 10px;">Binary search</a> <a href="/tags/Blue-Bridge-Cup/" style="font-size: 18px;">Blue Bridge Cup</a> <a href="/tags/Codeforces/" style="font-size: 12px;">Codeforces</a> <a href="/tags/WeChat/" style="font-size: 10px;">WeChat</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/backtracking/" style="font-size: 10px;">backtracking</a> <a href="/tags/bfs/" style="font-size: 12px;">bfs</a> <a href="/tags/binary/" style="font-size: 10px;">binary</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/bucket-sorting/" style="font-size: 10px;">bucket sorting</a> <a href="/tags/dfs/" style="font-size: 12px;">dfs</a> <a href="/tags/dynamic-programming/" style="font-size: 10px;">dynamic programming</a> <a href="/tags/enumeration/" style="font-size: 16px;">enumeration</a> <a href="/tags/excel/" style="font-size: 12px;">excel</a> <a href="/tags/gcd/" style="font-size: 10px;">gcd</a> <a href="/tags/greedy/" style="font-size: 20px;">greedy</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/interval/" style="font-size: 12px;">interval</a> <a href="/tags/knapsack/" style="font-size: 10px;">knapsack</a> <a href="/tags/knapsack-problem/" style="font-size: 10px;">knapsack problem</a> <a href="/tags/lcm/" style="font-size: 10px;">lcm</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/miniprogram/" style="font-size: 10px;">miniprogram</a> <a href="/tags/modulus/" style="font-size: 14px;">modulus</a> <a href="/tags/permutation/" style="font-size: 14px;">permutation</a> <a href="/tags/prefix-sum/" style="font-size: 10px;">prefix sum</a> <a href="/tags/prime/" style="font-size: 10px;">prime</a> <a href="/tags/quick-sort/" style="font-size: 12px;">quick sort</a> <a href="/tags/sequence/" style="font-size: 10px;">sequence</a> <a href="/tags/simulation/" style="font-size: 12px;">simulation</a> <a href="/tags/union-set/" style="font-size: 10px;">union set</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/04/union-set/">并查集</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/29/Web-Attack-Technology/">Web攻击技术基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/learn-dynamic-programming/">动态规划专题学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/">第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/5th-Blue-Bridge-Cup-C-B/">第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Monody12<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

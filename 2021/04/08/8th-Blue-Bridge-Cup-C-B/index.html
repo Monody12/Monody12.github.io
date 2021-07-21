@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>第八届蓝桥杯大赛软件类省赛 C/C++ 大学B 组 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="目录 购物单 等差素数列 承压计算 方格分割 取位数 最大公共子串 日期问题 包子凑数 分巧克力 k倍区间  1.购物单使用记事本或者其他文本编辑软件的替换功能将xx折或者半价替换为价格倍率(如0.5)，然后编写简单的乘加程序即可。 1234567891011121314151617#include &lt;cstdio&gt;#define input freopen(&quot;C:\\Use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第八届蓝桥杯大赛软件类省赛 C&#x2F;C++ 大学B 组">
+<meta property="og:url" content="https://monody12.github.io/2021/04/08/8th-Blue-Bridge-Cup-C-B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目录 购物单 等差素数列 承压计算 方格分割 取位数 最大公共子串 日期问题 包子凑数 分巧克力 k倍区间  1.购物单使用记事本或者其他文本编辑软件的替换功能将xx折或者半价替换为价格倍率(如0.5)，然后编写简单的乘加程序即可。 1234567891011121314151617#include &lt;cstdio&gt;#define input freopen(&quot;C:\\Use">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-08T04:17:00.000Z">
+<meta property="article:modified_time" content="2021-07-21T11:34:11.424Z">
+<meta property="article:author" content="Monody12">
+<meta property="article:tag" content="Blue Bridge Cup">
+<meta property="article:tag" content="enumeration">
+<meta property="article:tag" content="prime">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="knapsack">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Monody12.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-8th-Blue-Bridge-Cup-C-B" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/08/8th-Blue-Bridge-Cup-C-B/" class="article-date">
+  <time class="dt-published" datetime="2021-04-08T04:17:00.000Z" itemprop="datePublished">2021-04-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      第八届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="目录">目录</a></h2><ol>
+<li><a href="#%E8%B4%AD%E7%89%A9%E5%8D%95">购物单</a></li>
+<li><a href="#%E7%AD%89%E5%B7%AE%E7%B4%A0%E6%95%B0%E5%88%97">等差素数列</a></li>
+<li><a href="#%E6%89%BF%E5%8E%8B%E8%AE%A1%E7%AE%97">承压计算</a></li>
+<li><a href="#%E6%96%B9%E6%A0%BC%E5%88%86%E5%89%B2">方格分割</a></li>
+<li><a href="#%E5%8F%96%E4%BD%8D%E6%95%B0">取位数</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2">最大公共子串</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E9%97%AE%E9%A2%98">日期问题</a></li>
+<li><a href="#%E5%8C%85%E5%AD%90%E5%87%91%E6%95%B0">包子凑数</a></li>
+<li><a href="#%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B">分巧克力</a></li>
+<li><a href="#k%E5%80%8D%E5%8C%BA%E9%97%B4">k倍区间</a></li>
+</ol>
+<h2 id="1-购物单"><a href="#1-购物单" class="headerlink" title="1.购物单"></a><a name="购物单">1.购物单</a></h2><p>使用记事本或者其他文本编辑软件的<strong>替换功能</strong>将xx折或者半价替换为价格倍率(如0.5)，然后编写简单的乘加程序即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    input;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">double</span> price, discount;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;price, &amp;discount);</span><br><span class="line">        sum += price * discount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：5136.859500<br>填入答案：5200</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="2-等差素数列-线性筛-暴力"><a href="#2-等差素数列-线性筛-暴力" class="headerlink" title="2.等差素数列 (线性筛 暴力)"></a><a name="等差素数列">2.等差素数列 (线性筛 暴力)</a></h2><p>参见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40124642/article/details/79486442">蓝桥杯 等差素数列</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>使用线性筛求出100000以内的所有素数（因为也不知道答案范围有多大，姑且开这么大先）。然后枚举可能出现的公差，暴力求解。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">bool</span> isprime[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;  <span class="comment">//筛质数</span></span><br><span class="line">    <span class="built_in">memset</span>(isprime, <span class="literal">true</span>, <span class="keyword">sizeof</span>(isprime));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>,len = n / <span class="number">2</span>; i &lt;= len; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span> * i; j &lt; n; j += i)</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">1000</span>; i++) &#123;     <span class="comment">//第一重循环公差</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; maxn; j++) &#123; <span class="comment">//第二层循环设定 第一个素数</span></span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;   <span class="comment">//计数器</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">10</span>; k++) &#123;  <span class="comment">//如果满足  10 个素数输出</span></span><br><span class="line">                <span class="keyword">if</span> (isprime[j + i * k])</span><br><span class="line">                    cnt++;</span><br><span class="line">                <span class="keyword">if</span> (cnt == <span class="number">10</span>) &#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; j &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    selectPrime(maxn);</span><br><span class="line">    <span class="keyword">int</span> ans = solve();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="3-承压计算-模拟"><a href="#3-承压计算-模拟" class="headerlink" title="3.承压计算 (模拟)"></a><a name="承压计算">3.承压计算 (模拟)</a></h2><p>X星球的高科技实验室中整齐地堆放着某批珍贵金属原料。</p>
+<p>每块金属原料的外形、尺寸完全一致，但重量不同。<br>金属材料被严格地堆放成金字塔形。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">                             7 </span><br><span class="line">                            5 8 </span><br><span class="line">                           7 8 8 </span><br><span class="line">                          9 2 7 2 </span><br><span class="line">                         8 1 4 9 1 </span><br><span class="line">                        8 1 8 8 4 1 </span><br><span class="line">                       7 9 6 1 4 5 4 </span><br><span class="line">                      5 6 5 5 6 9 5 6 </span><br><span class="line">                     5 5 4 7 9 3 5 5 1 </span><br><span class="line">                    7 5 7 9 7 4 7 3 3 1 </span><br><span class="line">                   4 6 4 5 5 8 8 3 2 4 3 </span><br><span class="line">                  1 1 3 3 1 6 6 5 5 4 4 2 </span><br><span class="line">                 9 9 9 2 1 9 1 9 2 9 5 7 9 </span><br><span class="line">                4 3 3 7 7 9 3 6 1 3 8 8 3 7 </span><br><span class="line">               3 6 8 1 5 3 9 5 8 3 8 1 8 3 3 </span><br><span class="line">              8 3 2 3 3 5 5 8 5 4 2 8 6 7 6 9 </span><br><span class="line">             8 1 8 1 8 4 6 2 2 1 7 9 4 2 3 3 4 </span><br><span class="line">            2 8 4 2 2 9 9 2 8 3 4 9 6 3 9 4 6 9 </span><br><span class="line">           7 9 7 4 9 7 6 6 2 8 9 4 1 8 1 7 2 1 6 </span><br><span class="line">          9 2 8 6 4 2 7 9 5 4 1 2 5 1 7 3 9 8 3 3 </span><br><span class="line">         5 2 1 6 7 9 3 2 8 9 5 5 6 6 6 2 1 8 7 9 9 </span><br><span class="line">        6 7 1 8 8 7 5 3 6 5 4 7 3 4 6 7 8 1 3 2 7 4 </span><br><span class="line">       2 2 6 3 5 3 4 9 2 4 5 7 6 6 3 2 7 2 4 8 5 5 4 </span><br><span class="line">      7 4 4 5 8 3 3 8 1 8 6 3 2 1 6 2 6 4 6 3 8 2 9 6 </span><br><span class="line">     1 2 4 1 3 3 5 3 4 9 6 3 8 6 5 9 1 5 3 2 6 8 8 5 3 </span><br><span class="line">    2 2 7 9 3 3 2 8 6 9 8 4 4 9 5 8 2 6 3 4 8 4 9 3 8 8 </span><br><span class="line">   7 7 7 9 7 5 2 7 9 2 5 1 9 2 6 5 3 9 3 5 7 3 5 4 2 8 9 </span><br><span class="line">  7 7 6 6 8 7 5 5 8 2 4 7 7 4 7 2 6 9 2 1 8 2 9 8 5 7 3 6 </span><br><span class="line"> 5 9 4 5 5 7 5 5 6 3 5 3 9 5 8 9 5 4 1 2 6 1 4 3 5 3 2 4 1 </span><br><span class="line">X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X </span><br></pre></td></tr></table></figure>
+<p>其中的数字代表金属块的重量（计量单位较大）。<br>最下一层的X代表30台极高精度的电子秤。</p>
+<p>假设每块原料的重量都十分精确地平均落在下方的两个金属块上，<br>最后，所有的金属块的重量都严格精确地平分落在最底层的电子秤上。<br>电子秤的计量单位很小，所以显示的数字很大。</p>
+<p>工作人员发现，其中读数最小的电子秤的示数为：2086458231</p>
+<p>请你推算出：读数最大的电子秤的示数为多少？</p>
+<p>注意：需要提交的是一个整数，不要填写任何多余的内容。</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>题意：有30台高精度电子秤上成金字塔型放置着一些金属块，每一个金属块的种类都会平摊到下面的两个物品上。电子秤有一个自己的计量单位，给出了一个最小的电子秤读数，让我们求出一个最大的电子秤读数。</p>
+<p>实现：使用数组来记录每一个物品和电子秤的重量（包含自身的重量和来自上方物品的重量）。先记录自身，再记录平摊。最后找出电子秤的最大重量和最小重量，计算出电子秤的显示倍率即可算出答案。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> a[<span class="number">30</span>][<span class="number">30</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    input;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">29</span>; ++i) <span class="comment">//读入每块重量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i + <span class="number">1</span>; ++j)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;a[i][j]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">30</span>; ++i) &#123; <span class="comment">//均摊重量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i + <span class="number">1</span>; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span>)</span><br><span class="line">                a[i][j] += <span class="number">0.5</span> * a[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                a[i][j] += <span class="number">0.5</span> * (a[i - <span class="number">1</span>][j - <span class="number">1</span>] + a[i - <span class="number">1</span>][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> MaxWeight = DBL_MIN, MinWeight = DBL_MAX;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; ++i) &#123; <span class="comment">//找出30台电子秤的最大承重和最小承重</span></span><br><span class="line">        MaxWeight = max(MaxWeight, a[<span class="number">29</span>][i]);</span><br><span class="line">        MinWeight = min(MinWeight, a[<span class="number">29</span>][i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> rate = <span class="number">2086458231</span> / MinWeight; <span class="comment">//电子秤的显示倍率</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf&quot;</span>, rate * MaxWeight);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出答案：72665192664.000000<br>填入答案：72665192664</p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="4-方格分割"><a href="#4-方格分割" class="headerlink" title="4.方格分割"></a><a name="方格分割">4.方格分割</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="5-取位数"><a href="#5-取位数" class="headerlink" title="5.取位数"></a><a name="取位数">5.取位数</a></h2><p>求1个整数的第k位数字有很多种方法。<br>以下的方法就是一种。  </p>
+<p>// 求x用10进制表示时的数位长度   </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">len</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;<span class="number">10</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> len(x/<span class="number">10</span>)+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 取x的第k位数字</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(len(x)-k==<span class="number">0</span>) <span class="keyword">return</span> x%<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> _____________________;  <span class="comment">//填空</span></span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">23574</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, f(x,<span class="number">3</span>));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于题目中的测试数据，应该打印5。</p>
+<p>请仔细分析源码，并补充划线部分所缺少的代码。</p>
+<p>注意：只提交缺失的代码，不要填写任何已有内容或说明性的文字。</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>我感觉这题有一点歧义，就是题中要求的第k位数是从左往右数k位数，还是从右往左数k位数。这里就姑且认为是从左往右吧。<br>第一个函数是求一个整数的位数。看第二个函数的if条件，如果这个整数的长度等于k，就返回这个整数的最后一位。那么就可以推测出结果是：每次将这个数移除最后最后一位，直至这个数只有k位。</p>
+<p>填入答案：<code>f(x/10,k)</code></p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="6-最大公共子串"><a href="#6-最大公共子串" class="headerlink" title="6.最大公共子串"></a><a name="最大公共子串">6.最大公共子串</a></h2><p>最大公共子串长度问题就是：<br>求两个串的所有子串中能够匹配上的最大长度是多少。  </p>
+<p>比如：”abcdkkk” 和 “baabcdadabc”，<br>可以找到的最长的公共子串是”abcd”,所以最大公共子串长度为4。  </p>
+<p>下面的程序是采用矩阵法进行求解的，这对串的规模不大的情况还是比较有效的解法。  </p>
+<p>请分析该解法的思路，并补全划线部分缺失的代码。 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 256</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s1, <span class="keyword">const</span> <span class="keyword">char</span>* s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[N][N];</span><br><span class="line">	<span class="keyword">int</span> len1 = <span class="built_in">strlen</span>(s1);</span><br><span class="line">	<span class="keyword">int</span> len2 = <span class="built_in">strlen</span>(s2);</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*N*N);</span><br><span class="line">	<span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=len1; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=len2; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s1[i<span class="number">-1</span>]==s2[j<span class="number">-1</span>]) &#123;</span><br><span class="line">				a[i][j] = __________________________;  <span class="comment">//填空</span></span><br><span class="line">				<span class="keyword">if</span>(a[i][j] &gt; max) max = a[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, f(<span class="string">&quot;abcdkkk&quot;</span>, <span class="string">&quot;baabcdadabc&quot;</span>));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><p>参考学习<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_40872274/article/details/88093668#google_vignette">最长公共子串问题——矩阵法求解</a><br>1、把两个字符串分别以行和列组成一个二维矩阵。</p>
+<p>2、比较二维矩阵中每个点对应行列字符中否相等，相等的话值设置为1，否则设置为0。</p>
+<p>3、通过查找出值为1的最长对角线就能找到最长公共子串。</p>
+<p>所以如果发现字符串的两字符匹配，就根据在上一步数值（左上方）的基础上+1。</p>
+<p>填入答案：<code>a[i-1][j-1] +1</code></p>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="7-日期问题-（模拟）"><a href="#7-日期问题-（模拟）" class="headerlink" title="7.日期问题 （模拟）"></a><a name="日期问题">7.日期问题 （模拟）</a></h2><p>小明正在整理一批历史文献。这些历史文献中出现了很多日期。小明知道这些日期都在1960年1月1日至2059年12月31日。令小明头疼的是，这些日期采用的格式非常不统一，有采用年/月/日的，有采用月/日/年的，还有采用日/月/年的。更加麻烦的是，年份也都省略了前两位，使得文献上的一个日期，存在很多可能的日期与其对应。  </p>
+<p>比如02/03/04，可能是2002年03月04日、2004年02月03日或2004年03月02日。  </p>
+<p>给出一个文献上的日期，你能帮助小明判断有哪些可能的日期对其对应吗？</p>
+<p>输入</p>
+<p>一个日期，格式是”AA/BB/CC”。  (0 &lt;= A, B, C &lt;= 9)  </p>
+<p>输入</p>
+<p>输出若干个不相同的日期，每个日期一行，格式是”yyyy-MM-dd”。多个日期按从早到晚排列。  </p>
+<p>样例输入</p>
+<p>02/03/04  </p>
+<p>样例输出</p>
+<p>2002-03-04<br>2004-02-03<br>2004-03-02  </p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>存在多种日期的排列方式，可以设计多种函数来分别处理不同排序。<br>为了验证正确性使用了蓝桥练习系统的评测（不支持C++11特性）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">to_string</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//整数转字符串函数</span></span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">while</span> (n) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = n % <span class="number">10</span>;</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">        s += (<span class="keyword">char</span>) (t + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(s.begin(), s.end());</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> days[][<span class="number">13</span>] = &#123;&#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">28</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>&#125;,</span><br><span class="line">                  &#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check_leapYear</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//检查是否为闰年</span></span><br><span class="line">    <span class="keyword">if</span> (n % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">100</span> != <span class="number">0</span> || n % <span class="number">400</span> == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">int_to_string</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//整数转成日期字符串 (添加前导0)</span></span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;0&quot;</span> + ::to_string(n);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> ::to_string(n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">year_month_day</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> day)</span> </span>&#123;  <span class="comment">//年/月/日</span></span><br><span class="line">    <span class="keyword">if</span> (year &lt;= <span class="number">60</span>)</span><br><span class="line">        year += <span class="number">2000</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        year += <span class="number">1900</span>;</span><br><span class="line">    <span class="keyword">if</span> (month &gt; <span class="number">12</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> leap = check_leapYear(year);</span><br><span class="line">    <span class="keyword">if</span> (days[leap][month] &lt; day || day &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> ::to_string(year) + <span class="string">&quot;-&quot;</span> + int_to_string(month) + <span class="string">&quot;-&quot;</span> + int_to_string(day);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">month_day_year</span><span class="params">(<span class="keyword">int</span> month, <span class="keyword">int</span> day, <span class="keyword">int</span> year)</span> </span>&#123;  <span class="comment">//月/日/年</span></span><br><span class="line">    <span class="keyword">if</span> (year &lt;= <span class="number">60</span>)</span><br><span class="line">        year += <span class="number">2000</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        year += <span class="number">1900</span>;</span><br><span class="line">    <span class="keyword">if</span> (month &gt; <span class="number">12</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> leap = check_leapYear(year);</span><br><span class="line">    <span class="keyword">if</span> (days[leap][month] &lt; day || day &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> ::to_string(year) + <span class="string">&quot;-&quot;</span> + int_to_string(month) + <span class="string">&quot;-&quot;</span> + int_to_string(day);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">day_month_year</span><span class="params">(<span class="keyword">int</span> day, <span class="keyword">int</span> month, <span class="keyword">int</span> year)</span> </span>&#123;  <span class="comment">//日/月/年</span></span><br><span class="line">    <span class="keyword">if</span> (year &lt;= <span class="number">60</span>)</span><br><span class="line">        year += <span class="number">2000</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        year += <span class="number">1900</span>;</span><br><span class="line">    <span class="keyword">if</span> (month &gt; <span class="number">12</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> leap = check_leapYear(year);</span><br><span class="line">    <span class="keyword">if</span> (days[leap][month] &lt; day || day &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> ::to_string(year) + <span class="string">&quot;-&quot;</span> + int_to_string(month) + <span class="string">&quot;-&quot;</span> + int_to_string(day);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">int</span> one, two, three;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d/%d/%d&quot;</span>, &amp;one, &amp;two, &amp;three);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line">    <span class="built_in">string</span> tmp = year_month_day(one, two, three);</span><br><span class="line">    <span class="keyword">if</span> (tmp.length() != <span class="number">0</span>)</span><br><span class="line">        ans.push_back(tmp);</span><br><span class="line">    tmp = day_month_year(one, two, three);</span><br><span class="line">    <span class="keyword">if</span> (tmp.length() != <span class="number">0</span> &amp;&amp; one != three)</span><br><span class="line">        ans.push_back(tmp);</span><br><span class="line">    tmp = month_day_year(one, two, three);</span><br><span class="line">    <span class="keyword">if</span> (tmp.length() != <span class="number">0</span> &amp;&amp; one != two &amp;&amp; two != three)</span><br><span class="line">        ans.push_back(tmp);</span><br><span class="line">    sort(ans.begin(), ans.end());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ans.size(); ++i)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="8-包子凑数-数学-完全背包"><a href="#8-包子凑数-数学-完全背包" class="headerlink" title="8.包子凑数 (数学 完全背包)"></a><a name="包子凑数">8.包子凑数 (数学 完全背包)</a></h2><p>小明几乎每天早晨都会在一家包子铺吃早餐。他发现这家包子铺有N种蒸笼，其中第i种蒸笼恰好能放Ai个包子。每种蒸笼都有非常多笼，可以认为是无限笼。</p>
+<p>每当有顾客想买X个包子，卖包子的大叔就会迅速选出若干笼包子来，使得这若干笼中恰好一共有X个包子。比如一共有3种蒸笼，分别能放3、4和5个包子。当顾客想买11个包子时，大叔就会选2笼3个的再加1笼5个的（也可能选出1笼3个的再加2笼4个的）。</p>
+<p>当然有时包子大叔无论如何也凑不出顾客想买的数量。比如一共有3种蒸笼，分别能放4、5和6个包子。而顾客想买7个包子时，大叔就凑不出来了。</p>
+<p>小明想知道一共有多少种数目是包子大叔凑不出来的。</p>
+<p>输入</p>
+<p>第一行包含一个整数N。(1 &lt;= N &lt;= 100)<br>以下N行每行包含一个整数Ai。(1 &lt;= Ai &lt;= 100)  </p>
+<p>输出</p>
+<p>一个整数代表答案。如果凑不出的数目有无限多个，输出INF。</p>
+<p>例如，<br>输入：<br>2<br>4<br>5   </p>
+<p>程序应该输出：<br>6  </p>
+<p>再例如，<br>输入：<br>2<br>4<br>6    </p>
+<p>程序应该输出：<br>INF</p>
+<p>样例解释：<br>对于样例1，凑不出的数目包括：1, 2, 3, 6, 7, 11。<br>对于样例2，所有奇数都凑不出来，所以有无限多个。  </p>
+<h3 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h3><p>题意：这是一个凑数问题，要求利用现有的数能否凑成任意一个数，每个现有的数有无限多个。<br>显然是一个完全背包问题，但问题是背包的dp数组上限要开多大。这里涉及到一个数学知识，如果所给的数它们的最大公因数GCD不为1，说明它们都是一个不为1的数的倍数。那么显然存在无限多个正整数不是GCD的倍数，所以这种情况时输出INF。若GCD为1，由Ai最大为100可得，dp开100<sup>2</sup>就行。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">101</span>];</span><br><span class="line"><span class="keyword">bool</span> dp[<span class="number">10001</span>] = &#123;<span class="literal">true</span>&#125;; <span class="comment">//dp数组含义 dp[i]代表客人需要i个包子时能否用现有蒸笼凑出来</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="comment">//求最大公约数</span></span><br><span class="line">    <span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, a + i);</span><br><span class="line">    <span class="keyword">int</span> GCD = a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        GCD = gcd(GCD, a[i]);  <span class="comment">//求所有蒸笼能存放包子的数量的最大公因数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (GCD != <span class="number">1</span>) &#123; <span class="comment">//如果最大公因数不为1，就会有无穷组不存在的情况</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;INF&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) <span class="comment">// 完全背包</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = a[i]; j &lt; <span class="number">10001</span>; ++j)</span><br><span class="line">            <span class="keyword">if</span> (dp[j - a[i]] == <span class="literal">true</span>)</span><br><span class="line">                dp[j] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10001</span>; ++i)</span><br><span class="line">        <span class="keyword">if</span> (dp[i] == <span class="literal">false</span>)</span><br><span class="line">            ++ans;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="9-分巧克力"><a href="#9-分巧克力" class="headerlink" title="9.分巧克力"></a><a name="分巧克力">9.分巧克力</a></h2><p>儿童节那天有K位小朋友到小明家做客。小明拿出了珍藏的巧克力招待小朋友们。<br>小明一共有N块巧克力，其中第i块是Hi x Wi的方格组成的长方形。</p>
+<p>为了公平起见，小明需要从这 N 块巧克力中切出K块巧克力分给小朋友们。切出的巧克力需要满足：</p>
+<pre><code>1. 形状是正方形，边长是整数  
+2. 大小相同  
+</code></pre>
+<p>例如一块6x5的巧克力可以切出6块2x2的巧克力或者2块3x3的巧克力。</p>
+<p>当然小朋友们都希望得到的巧克力尽可能大，你能帮小Hi计算出最大的边长是多少么？</p>
+<p>输入<br>第一行包含两个整数N和K。(1 &lt;= N, K &lt;= 100000)<br>以下N行每行包含两个整数Hi和Wi。(1 &lt;= Hi, Wi &lt;= 100000)<br>输入保证每位小朋友至少能获得一块1x1的巧克力。   </p>
+<p>输出<br>输出切出的正方形巧克力最大可能的边长。</p>
+<p>样例输入：<br>2 10<br>6 5<br>5 6  </p>
+<p>样例输出：<br>2</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> input freopen(<span class="meta-string">&quot;C:\\Users\\Administrator\\Desktop\\a.txt&quot;</span>,<span class="meta-string">&quot;r&quot;</span>,stdin)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100005</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 判断以边长a来分巧克力是否能满足k个小朋友的需求</span></span><br><span class="line"><span class="comment"> * @param chocolates 巧克力的信息</span></span><br><span class="line"><span class="comment"> * @param n 有n块巧克力</span></span><br><span class="line"><span class="comment"> * @param k k个小朋友</span></span><br><span class="line"><span class="comment"> * @param a 分的边长</span></span><br><span class="line"><span class="comment"> * @return 能否满足要求</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; &amp;chocolates, <span class="keyword">int</span> n, <span class="keyword">int</span> k, <span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &amp;i:chocolates) &#123;</span><br><span class="line">        <span class="keyword">int</span> height = i.first / a; <span class="comment">//在高度上能切多少刀</span></span><br><span class="line">        <span class="keyword">int</span> width = i.second / a; <span class="comment">//宽度上能切多少刀</span></span><br><span class="line">        sum += height * width;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= k)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//input;</span></span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; chocolates(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;chocolates[i].first, &amp;chocolates[i].second);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = maxn, mid;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (check(chocolates, n, k, mid))</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+<h2 id="10-k倍区间"><a href="#10-k倍区间" class="headerlink" title="10.k倍区间"></a><a name="k倍区间">10.k倍区间</a></h2><p><a href="#%E7%9B%AE%E5%BD%95">回到顶部</a></p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://monody12.github.io/2021/04/08/8th-Blue-Bridge-Cup-C-B/" data-id="ckrdetm5i0044x0ulewn2bjxt" data-title="第八届蓝桥杯大赛软件类省赛 C/C++ 大学B 组" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knapsack/" rel="tag">knapsack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/" rel="tag">math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prime/" rel="tag">prime</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/10/7th-Blue-Bridge-Cup-C-B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          第七届蓝桥杯大赛软件类省赛 C/C++ 大学B 组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/05/9th-Blue-Bridge-Cup-C-B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">第九届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Codeforces/">Codeforces</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/miniprogram/">miniprogram</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag"> dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Base-conversion/" rel="tag">Base conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-search/" rel="tag">Binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blue-Bridge-Cup/" rel="tag">Blue Bridge Cup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WeChat/" rel="tag">WeChat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backtracking/" rel="tag">backtracking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfs/" rel="tag">bfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary/" rel="tag">binary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bucket-sorting/" rel="tag">bucket sorting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enumeration/" rel="tag">enumeration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcd/" rel="tag">gcd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greedy/" rel="tag">greedy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/" rel="tag">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interval/" rel="tag">interval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack/" rel="tag">knapsack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knapsack-problem/" rel="tag">knapsack problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lcm/" rel="tag">lcm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miniprogram/" rel="tag">miniprogram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/modulus/" rel="tag">modulus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permutation/" rel="tag">permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prefix-sum/" rel="tag">prefix sum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prime/" rel="tag">prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/" rel="tag">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sequence/" rel="tag">sequence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/simulation/" rel="tag">simulation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/union-set/" rel="tag">union set</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dynamic-programming/" style="font-size: 10px;"> dynamic programming</a> <a href="/tags/Base-conversion/" style="font-size: 10px;">Base conversion</a> <a href="/tags/Binary-search/" style="font-size: 10px;">Binary search</a> <a href="/tags/Blue-Bridge-Cup/" style="font-size: 18px;">Blue Bridge Cup</a> <a href="/tags/Codeforces/" style="font-size: 12px;">Codeforces</a> <a href="/tags/WeChat/" style="font-size: 10px;">WeChat</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/backtracking/" style="font-size: 10px;">backtracking</a> <a href="/tags/bfs/" style="font-size: 12px;">bfs</a> <a href="/tags/binary/" style="font-size: 10px;">binary</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/bucket-sorting/" style="font-size: 10px;">bucket sorting</a> <a href="/tags/dfs/" style="font-size: 12px;">dfs</a> <a href="/tags/dynamic-programming/" style="font-size: 10px;">dynamic programming</a> <a href="/tags/enumeration/" style="font-size: 16px;">enumeration</a> <a href="/tags/excel/" style="font-size: 12px;">excel</a> <a href="/tags/gcd/" style="font-size: 10px;">gcd</a> <a href="/tags/greedy/" style="font-size: 20px;">greedy</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/interval/" style="font-size: 12px;">interval</a> <a href="/tags/knapsack/" style="font-size: 10px;">knapsack</a> <a href="/tags/knapsack-problem/" style="font-size: 10px;">knapsack problem</a> <a href="/tags/lcm/" style="font-size: 10px;">lcm</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/miniprogram/" style="font-size: 10px;">miniprogram</a> <a href="/tags/modulus/" style="font-size: 14px;">modulus</a> <a href="/tags/permutation/" style="font-size: 14px;">permutation</a> <a href="/tags/prefix-sum/" style="font-size: 10px;">prefix sum</a> <a href="/tags/prime/" style="font-size: 10px;">prime</a> <a href="/tags/quick-sort/" style="font-size: 12px;">quick sort</a> <a href="/tags/sequence/" style="font-size: 10px;">sequence</a> <a href="/tags/simulation/" style="font-size: 12px;">simulation</a> <a href="/tags/union-set/" style="font-size: 10px;">union set</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/04/union-set/">并查集</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/29/Web-Attack-Technology/">Web攻击技术基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/learn-dynamic-programming/">动态规划专题学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/15/11th-Blue-Bridge-Cup-C-B/">第十一届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/5th-Blue-Bridge-Cup-C-B/">第五届蓝桥杯大赛软件类省赛 C/C++ 大学B 组</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Monody12<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
